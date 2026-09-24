@@ -18,12 +18,14 @@ A local Retrieval-Augmented Generation (RAG) system built with Python, NumPy, an
 1. Create a virtual environment to install packages locally.
 
 2. Install the packages numpy and ollama via the requirements.txt: 
+```bash
 pip install -r requirements.txt
-
+```
 3. Install Ollama to pull nomic-embed-text and llama3.2:3b as local AI models: 
+```bash 
 ollama pull nomic-embed-text
 ollama pull llama3.2:3b
-
+```
 4. Run main.py and follow the instructions.
 
 ## Design Decisions:
