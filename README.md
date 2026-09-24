@@ -15,21 +15,24 @@ A local Retrieval-Augmented Generation (RAG) system built with Python, NumPy, an
 
 ## Set up:
 
-* Create a virtual environment to install packages locally.
+1. Create a virtual environment to install packages locally.
 
-* Install the packages numpy and ollama via the requirements.txt.
+2. Install the packages numpy and ollama via the requirements.txt: 
+pip install -r requirements.txt
 
-* Install Ollama to pull nomic-embed-text and llama3.2:3b as local AI models.
+3. Install Ollama to pull nomic-embed-text and llama3.2:3b as local AI models: 
+ollama pull nomic-embed-text
+ollama pull llama3.2:3b
 
-* Run main.py and follow the instructions.
+4. Run main.py and follow the instructions.
 
 ## Design Decisions:
 
-* L2 Normalization at Indexing: Normalizing all vectors during creation reduces cosine similarity calculations to a simple dot product, avoiding repeated calculations.
+* **L2 Normalization at Indexing:** Normalizing all vectors during creation reduces cosine similarity calculations to a simple dot product, avoiding repeated calculations.
 
-* Paragraph-Based Chunking: Splits text by natural paragraphs instead of fixed line counts to keep complete sentences together, preserve semantic context, and prevent key information from being cut mid-thought
+* **Paragraph-Based Chunking:** Splits text by natural paragraphs instead of fixed line counts to keep complete sentences together, preserve semantic context, and prevent key information from being cut mid-thought.
 
-* Model Selection: Selected a 3B parameter model to minimize response latency during interactive testing while retaining sufficient reasoning capacity to strictly follow prompt guardrails and prevent hallucinations.
+* **Model Selection:** Selected a 3B parameter model to minimize response latency during interactive testing while retaining sufficient reasoning capacity to strictly follow prompt guardrails and prevent hallucinations.
 
 
 
